@@ -18,7 +18,7 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:5;background:rgba(9,18,31,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
 header .wrap{display:flex;align-items:center;height:68px;gap:34px}
 header b{font:500 13px Inter;letter-spacing:.32em;color:var(--ink);margin-right:auto}
-header a{font-size:13px;font-weight:400;letter-spacing:.08em;text-decoration:none;color:var(--slate)}header a:hover{color:var(--ink)}
+.nav{display:flex;gap:34px}header a{font-size:13px;font-weight:400;letter-spacing:.08em;text-decoration:none;color:var(--slate)}header a:hover{color:var(--ink)}
 .label{font-size:11.5px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--brass)}
 /* hero */
 .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:72px;align-items:end;padding:110px 0 90px}
@@ -73,7 +73,7 @@ footer{border-top:1px solid var(--rule);padding:30px 0 44px;font-size:12px;lette
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 @media(max-width:900px){
- .wrap{padding:0 20px}header nav{display:none}
+ .wrap{padding:0 20px}header .nav{display:none}
  .hero{grid-template-columns:1fr;gap:40px;padding:56px 0 60px}.portrait{max-width:300px;order:-1}
  .facts{grid-template-columns:1fr 1fr}.facts div:nth-child(3){padding-left:0;border-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--rule)}
  section{padding-top:80px}.sh,.body,.also{grid-template-columns:1fr;gap:14px}.sh{margin-bottom:30px}.body>div:first-child,.also>div:first-child{display:none}
@@ -82,7 +82,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 }
 </style></head>
 <body>
-<header><div class="wrap"><b>ZAFAR AMIN</b><nav style="display:flex;gap:34px"><a href="#about">About</a><a href="#companies">Companies</a><a href="#contact">Contact</a></nav></div></header>
+<header><div class="wrap"><b>ZAFAR AMIN</b><nav class="nav"><a href="#about">About</a><a href="#companies">Companies</a><a href="#contact">Contact</a></nav></div></header>
 <main class="wrap">
 
 <div class="hero">
