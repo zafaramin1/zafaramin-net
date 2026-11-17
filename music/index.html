@@ -84,7 +84,7 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:24px 0 40px;font
   <audio id="aud" controls preload="none"></audio>
   <ol id="list"></ol>
 </div>
-<p class="cap" style="margin:10px 2px 0">Son of the Soil, 2006 recordings (Love Died, I Feel Alive, Your Love, Destruction, Blinded): Zafar Amin, vocals and guitar · Afzaal, guitar · Justin Arman, drums · Yusuf Amin, keyboards on I Feel Alive.</p>
+<p class="cap" style="margin:10px 2px 0">Son of the Soil, 2006 recordings (Love Died, I Feel Alive, Your Love, Destruction, Blinded): Zafar Amin, vocals and guitar · Afzaal, guitar · Justin Arman, drums · Yusuf Amin, keyboards on I Feel Alive.<br>Born Free, 2005, all 15 songs: Zafar Amin, vocals and guitar · Greg Riggs, drums · Bill Steppe, bass.</p>
 <blockquote>"A southern California pop/punk band with a determinedly quirky edge."<br><small>Stewart Mason, AllMusic, on <a href="https://www.allmusic.com/album/release/born-free-mr0000851299" target="_blank" rel="noopener">Born Free</a></small></blockquote>
 
 <h2 id="videos">Videos</h2>
@@ -163,7 +163,22 @@ var S=[
 ["I Feel Alive","Son of the Soil · keyboards by Yusuf Amin","sots-i-feel-alive","sots-artwork"],
 ["Your Love","Son of the Soil","sots-your-love","sots-artwork"],
 ["Destruction","Son of the Soil","sots-destruction","sots-artwork"],
-["Blinded","Son of the Soil","sots-blinded","sots-artwork"]];
+["Blinded","Son of the Soil","sots-blinded","sots-artwork"],
+["Sunshine","Son of the Soil · Born Free, 2005","bf-sunshine","born-free-cover"],
+["California","Son of the Soil · Born Free, 2005","bf-california","born-free-cover"],
+["New York","Son of the Soil · Born Free, 2005","bf-new-york","born-free-cover"],
+["No Easy Answers","Son of the Soil · Born Free, 2005","bf-no-easy-answers","born-free-cover"],
+["White Fantasy","Son of the Soil · Born Free, 2005","bf-white-fantasy","born-free-cover"],
+["I Will Follow","Son of the Soil · Born Free, 2005","bf-i-will-follow","born-free-cover"],
+["Don't Push","Son of the Soil · Born Free, 2005","bf-dont-push","born-free-cover"],
+["Temptation","Son of the Soil · Born Free, 2005","bf-temptation","born-free-cover"],
+["Scarecrow","Son of the Soil · Born Free, 2005","bf-scarecrow","born-free-cover"],
+["No Easy Out","Son of the Soil · Born Free, 2005","bf-no-easy-out","born-free-cover"],
+["TV Warriors","Son of the Soil · Born Free, 2005","bf-tv-warriors","born-free-cover"],
+["All Alone","Son of the Soil · Born Free, 2005","bf-all-alone","born-free-cover"],
+["Even If","Son of the Soil · Born Free, 2005","bf-even-if","born-free-cover"],
+["Addiction","Son of the Soil · Born Free, 2005","bf-addiction","born-free-cover"],
+["Red Sun","Son of the Soil · Born Free, 2005","bf-red-sun","born-free-cover"]];
 var L=document.getElementById('list'),A=document.getElementById('aud'),cur=-1;
 S.forEach(function(s,i){var li=document.createElement('li');li.innerHTML='<span>'+(i+1)+'. '+s[0]+'</span><small>'+s[1]+'</small>';li.onclick=function(){play(i)};L.appendChild(li)});
 function load(i){cur=i;var s=S[i];A.src='music/'+s[2]+'.mp3';document.getElementById('title').textContent=s[0];document.getElementById('artist').textContent=s[1];document.getElementById('art').src='img/'+s[3]+'.jpg';[].forEach.call(L.children,function(c,j){c.className=j==i?'on':''})}
