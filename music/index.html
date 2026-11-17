@@ -157,7 +157,12 @@ var S=[
 ["Weight of the World","The SandGuineas","weight-of-the-world","sandguineas-beach"],
 ["Problems","The SandGuineas","problems","sandguineas-beach"],
 ["Something Wrong","The SandGuineas","something-wrong","sandguineas-beach"],
-["One Direction","Son of the Soil","one-direction","sots-artwork"]];
+["One Direction","Son of the Soil","one-direction","sots-artwork"],
+["Love Died","Son of the Soil","sots-love-died","sots-artwork"],
+["I Feel Alive","Son of the Soil","sots-i-feel-alive","sots-artwork"],
+["Your Love","Son of the Soil","sots-your-love","sots-artwork"],
+["Destruction","Son of the Soil","sots-destruction","sots-artwork"],
+["Blinded","Son of the Soil","sots-blinded","sots-artwork"]];
 var L=document.getElementById('list'),A=document.getElementById('aud'),cur=-1;
 S.forEach(function(s,i){var li=document.createElement('li');li.innerHTML='<span>'+(i+1)+'. '+s[0]+'</span><small>'+s[1]+'</small>';li.onclick=function(){play(i)};L.appendChild(li)});
 function load(i){cur=i;var s=S[i];A.src='music/'+s[2]+'.mp3';document.getElementById('title').textContent=s[0];document.getElementById('artist').textContent=s[1];document.getElementById('art').src='img/'+s[3]+'.jpg';[].forEach.call(L.children,function(c,j){c.className=j==i?'on':''})}
