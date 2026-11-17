@@ -25,11 +25,18 @@ h2{color:var(--gold);font-size:clamp(26px,4vw,36px);margin:48px 0 14px}
 .now{display:flex;gap:14px;align-items:center;margin-bottom:12px}
 .now img{width:72px;height:72px;object-fit:cover;border-radius:8px}
 .now b{display:block;color:var(--gold);font-size:19px}.now span{font:14px system-ui,sans-serif;color:var(--muted)}
-audio{width:100%}
+audio{display:none}
+.bar{display:flex;align-items:center;gap:12px;background:#e6d6b3;color:#2a2418;border-radius:999px;padding:8px 16px 8px 8px;font:14px system-ui,sans-serif}
+.bar button{flex:none;width:40px;height:40px;border-radius:50%;border:0;background:#2a2418;color:#e6d6b3;font-size:15px;cursor:pointer}
+.bar input{flex:1;accent-color:#7a5a2a;min-width:60px}
+.bar .t{flex:none;font-variant-numeric:tabular-nums;color:#4a3f2c}
 ol{list-style:none;margin:12px 0 0;padding:0;font:15px system-ui,sans-serif}
-ol li{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:8px;cursor:pointer}
-ol li:hover,ol li.on{background:#1b1f45}ol li.on{color:var(--gold)}
-ol li small{color:var(--muted)}
+ol li{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:12px;padding:8px 10px;border-radius:8px;cursor:pointer}
+ol li:hover,ol li.on{background:#1b1f45}ol li.on .nm{color:var(--gold)}
+ol li .pb{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--gold);background:transparent;color:var(--gold);font-size:11px;cursor:pointer;padding:0;line-height:1}
+ol li.on.playing .pb{background:var(--gold);color:#1b1405}
+ol li .nm{display:block}ol li small{display:block;color:var(--muted);font-size:12.5px}
+ol li .tm{font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted);white-space:nowrap}ol li.on .tm{color:var(--gold)}
 .vids{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
 .vid{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .vid .f{position:relative;aspect-ratio:16/9;background:#000 center/cover no-repeat;cursor:pointer}
@@ -81,7 +88,8 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:24px 0 40px;font
 <h2 id="music">Music</h2>
 <div class="player">
   <div class="now"><img id="art" src="img/sandguineas-beach.jpg" alt=""><div><b id="title">Misunderstood</b><span id="artist">The SandGuineas</span></div></div>
-  <audio id="aud" controls preload="none"></audio>
+  <audio id="aud" preload="none"></audio>
+  <div class="bar"><button id="pp" aria-label="Play">&#9654;</button><input id="sk" type="range" min="0" max="100" step="0.1" value="0" aria-label="Seek"><span class="t" id="tt">0:00 / 0:00</span></div>
   <ol id="list"></ol>
 </div>
 <p class="cap" style="margin:10px 2px 0">Son of the Soil, 2006 recordings (Love Died, I Feel Alive, Your Love, Destruction, Blinded): Zafar Amin, vocals and guitar · Afzaal, bass · Justin Arman, drums · Yusuf Amin, keyboards on I Feel Alive.<br>Born Free, 2005, all 15 songs: Zafar Amin, vocals and guitar · Todd Lecuyer, guitar · Greg Riggs, drums · Bill Steppe, bass · Karyn Crisis, vocals on California and Don't Push, violin on Red Sun.<br>Todd Lecuyer also plays guitar on One Direction.</p>
@@ -180,10 +188,22 @@ var S=[
 ["Addiction","Son of the Soil · Born Free, 2005","bf-addiction","born-free-cover"],
 ["Red Sun","Son of the Soil · violin by Karyn Crisis · Born Free, 2005","bf-red-sun","born-free-cover"]];
 var L=document.getElementById('list'),A=document.getElementById('aud'),cur=-1;
-S.forEach(function(s,i){var li=document.createElement('li');li.innerHTML='<span>'+(i+1)+'. '+s[0]+'</span><small>'+s[1]+'</small>';li.onclick=function(){play(i)};L.appendChild(li)});
-function load(i){cur=i;var s=S[i];A.src='music/'+s[2]+'.mp3';document.getElementById('title').textContent=s[0];document.getElementById('artist').textContent=s[1];document.getElementById('art').src='img/'+s[3]+'.jpg';[].forEach.call(L.children,function(c,j){c.className=j==i?'on':''})}
+
+var DUR={"better-than-you":166,"bf-addiction":169,"bf-all-alone":195,"bf-california":130,"bf-dont-push":188,"bf-even-if":224,"bf-i-will-follow":211,"bf-new-york":140,"bf-no-easy-answers":142,"bf-no-easy-out":205,"bf-red-sun":239,"bf-scarecrow":217,"bf-sunshine":181,"bf-temptation":144,"bf-tv-warriors":146,"bf-white-fantasy":229,"counting":208,"descrated":151,"emptiness":130,"misunderstood":206,"one-direction":115,"problems":137,"silence":106,"something-wrong":125,"sots-blinded":253,"sots-destruction":264,"sots-i-feel-alive":212,"sots-love-died":158,"sots-your-love":234,"sunshine":162,"superficial":164,"warrior":149,"weight-of-the-world":154};
+function fmt(x){x=Math.max(0,Math.floor(x||0));return Math.floor(x/60)+':'+('0'+x%60).slice(-2)}
+var PP=document.getElementById('pp'),SK=document.getElementById('sk'),TT=document.getElementById('tt');
+S.forEach(function(s,i){var li=document.createElement('li');li.innerHTML='<button class="pb" aria-label="Play '+s[0]+'">&#9654;</button><span><span class="nm">'+(i+1)+'. '+s[0]+'</span><small>'+s[1]+'</small></span><span class="tm">'+fmt(DUR[s[2]])+'</span>';
+ li.querySelector('.pb').onclick=function(e){e.stopPropagation();if(cur===i&&!A.paused){A.pause()}else if(cur===i){A.play()}else{play(i)}};
+ li.onclick=function(){if(cur!==i)play(i)};L.appendChild(li)});
+function rowTime(){[].forEach.call(L.children,function(c,j){var s=S[j],d=DUR[s[2]];c.querySelector('.tm').textContent=(j===cur&&(A.currentTime>0||!A.paused))?fmt(A.currentTime)+' / '+fmt(d):fmt(d)})}
+function marks(){[].forEach.call(L.children,function(c,j){var on=j===cur,pl=on&&!A.paused;c.className=(on?'on':'')+(pl?' playing':'');c.querySelector('.pb').innerHTML=pl?'&#9632;':'&#9654;'});PP.innerHTML=A.paused?'&#9654;':'&#10074;&#10074;'}
+function load(i){cur=i;var s=S[i];A.src='music/'+s[2]+'.mp3';document.getElementById('title').textContent=s[0];document.getElementById('artist').textContent=s[1];document.getElementById('art').src='img/'+s[3]+'.jpg';SK.value=0;TT.textContent='0:00 / '+fmt(DUR[s[2]]);marks();rowTime()}
 function play(i){load(i);A.play()}
-A.onended=function(){if(cur<S.length-1)play(cur+1)};load(0);
+PP.onclick=function(){if(cur<0)load(0);A.paused?A.play():A.pause()};
+SK.oninput=function(){var d=A.duration||DUR[S[cur][2]];if(d)A.currentTime=SK.value/100*d};
+A.ontimeupdate=function(){var d=A.duration||DUR[S[cur][2]];SK.value=d?A.currentTime/d*100:0;TT.textContent=fmt(A.currentTime)+' / '+fmt(d);rowTime()};
+A.onplay=A.onpause=function(){marks();rowTime()};
+A.onended=function(){if(cur<S.length-1)play(cur+1);else marks()};load(0);
 var V=[["neUrHOHJ2QQ","Blinded · Son of the Soil"],["C4QIp6dWMTw","Silence · The SandGuineas"],["oStufH0Ybww","Problems · The SandGuineas"],["fk-0K1Qei-o","Emptiness"],["qK754kj1O-g","Superficial"],["YFekfYnUtYc","Better Than You"],["AwqwJ8EhAlQ","Something Wrong"]];
 var VD=document.getElementById('vids');
 V.forEach(function(v){var d=document.createElement('div');d.className='vid';d.innerHTML='<div class="f" style="background-image:url(https://i.ytimg.com/vi/'+v[0]+'/hqdefault.jpg)"></div><p>'+v[1]+'</p>';
