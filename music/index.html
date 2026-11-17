@@ -84,7 +84,7 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:24px 0 40px;font
   <audio id="aud" controls preload="none"></audio>
   <ol id="list"></ol>
 </div>
-<p class="cap" style="margin:10px 2px 0">Son of the Soil, 2006 recordings (Love Died, I Feel Alive, Your Love, Destruction, Blinded): Zafar Amin, vocals and guitar · Afzaal, guitar · Justin Arman, drums · Yusuf Amin, keyboards on I Feel Alive.<br>Born Free, 2005, all 15 songs: Zafar Amin, vocals and guitar · Greg Riggs, drums · Bill Steppe, bass · Karyn Crisis, vocals on California and Don't Push.</p>
+<p class="cap" style="margin:10px 2px 0">Son of the Soil, 2006 recordings (Love Died, I Feel Alive, Your Love, Destruction, Blinded): Zafar Amin, vocals and guitar · Afzaal, guitar · Justin Arman, drums · Yusuf Amin, keyboards on I Feel Alive.<br>Born Free, 2005, all 15 songs: Zafar Amin, vocals and guitar · Greg Riggs, drums · Bill Steppe, bass · Karyn Crisis, vocals on California and Don't Push, violin on Red Sun.</p>
 <blockquote>"A southern California pop/punk band with a determinedly quirky edge."<br><small>Stewart Mason, AllMusic, on <a href="https://www.allmusic.com/album/release/born-free-mr0000851299" target="_blank" rel="noopener">Born Free</a></small></blockquote>
 
 <h2 id="videos">Videos</h2>
@@ -178,7 +178,7 @@ var S=[
 ["All Alone","Son of the Soil · Born Free, 2005","bf-all-alone","born-free-cover"],
 ["Even If","Son of the Soil · Born Free, 2005","bf-even-if","born-free-cover"],
 ["Addiction","Son of the Soil · Born Free, 2005","bf-addiction","born-free-cover"],
-["Red Sun","Son of the Soil · Born Free, 2005","bf-red-sun","born-free-cover"]];
+["Red Sun","Son of the Soil · violin by Karyn Crisis · Born Free, 2005","bf-red-sun","born-free-cover"]];
 var L=document.getElementById('list'),A=document.getElementById('aud'),cur=-1;
 S.forEach(function(s,i){var li=document.createElement('li');li.innerHTML='<span>'+(i+1)+'. '+s[0]+'</span><small>'+s[1]+'</small>';li.onclick=function(){play(i)};L.appendChild(li)});
 function load(i){cur=i;var s=S[i];A.src='music/'+s[2]+'.mp3';document.getElementById('title').textContent=s[0];document.getElementById('artist').textContent=s[1];document.getElementById('art').src='img/'+s[3]+'.jpg';[].forEach.call(L.children,function(c,j){c.className=j==i?'on':''})}
