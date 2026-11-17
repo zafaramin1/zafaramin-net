@@ -1,0 +1,141 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zafar Amin - Founder, IDDAS Technologies</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--tan:#e9dab9;--ink:#13233b;--ink2:#34404f;--navy:#112038;--cream:#ecdfc2;--cream2:#c4b89b;--red:#9e2a2b;--gold:#d2ad6e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;overflow-x:hidden;color:var(--ink2);font:400 15px/1.75 "Libre Baskerville",Georgia,serif;background:var(--tan) url(../img/tan-texture.jpg) repeat;background-size:512px}
+a{color:inherit}
+.mono{font-family:"Courier Prime","Courier New",monospace}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+.navy{background:var(--navy) url(../img/navy-texture.jpg) repeat;background-size:512px;color:var(--cream2)}
+header{position:sticky;top:0;z-index:5;box-shadow:0 2px 0 rgba(0,0,0,.18)}
+header .wrap{display:flex;align-items:center;height:64px;gap:34px}
+header b{font:700 16px "Courier Prime",monospace;letter-spacing:.24em;color:var(--cream);margin-right:auto}
+.nav{display:flex;gap:34px}header a{font:400 14px "Courier Prime",monospace;letter-spacing:.1em;text-decoration:none;color:var(--cream2)}header a:hover{color:var(--cream)}
+.label{font:700 15px "Courier Prime",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:64px;align-items:end;padding:90px 0 70px}
+.hero .label{font-size:17px}
+.hero h1{font:700 clamp(34px,4.8vw,66px)/1.05 "Courier Prime",monospace;color:var(--ink);margin:16px 0 24px;letter-spacing:-.01em;white-space:nowrap}
+.hero p{font-size:17px;line-height:1.7;color:var(--ink);max-width:540px;margin:0 0 34px}
+.cta{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 26px;background:var(--navy) url(../img/navy-texture.jpg);background-size:512px;color:var(--cream);text-decoration:none;font:700 14px "Courier Prime",monospace;letter-spacing:.1em;transition:filter .2s}
+.btn:hover{filter:brightness(1.35)}
+.lnk{font:700 14px "Courier Prime",monospace;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:2px solid rgba(19,35,59,.3);padding-bottom:3px}.lnk:hover{border-color:var(--ink)}
+.portrait{aspect-ratio:4/5;position:relative}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) sepia(.18) contrast(1.05);
+ -webkit-mask-image:linear-gradient(to bottom,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,#000 72%,transparent 100%)}
+.seal{position:absolute;left:-34px;bottom:34px;width:128px;height:128px;transform:rotate(-12deg);opacity:.9}
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.facts div{padding:22px 22px 24px}
+.facts span{display:block;font:700 12px "Courier Prime",monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.facts strong{font:400 16px/1.45 "Courier Prime",monospace;color:var(--cream)}
+/* sections */
+section{padding:100px 0 0}
+.sh{display:grid;grid-template-columns:210px 1fr;gap:40px;margin-bottom:44px}
+.sh .label{padding-top:8px}
+.sh h2{font:700 clamp(22px,2.6vw,30px)/1.35 "Courier Prime",monospace;color:var(--ink);margin:0;max-width:820px}
+.body{display:grid;grid-template-columns:210px 1fr 1fr;gap:40px}
+.body p{margin:0 0 18px}
+/* companies: navy blocks on tan */
+.cos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-left:250px}
+.co{display:flex;flex-direction:column;padding:28px 30px 26px;text-decoration:none;box-shadow:0 3px 0 rgba(0,0,0,.18);transition:transform .2s,filter .2s}
+.co:hover{transform:translateY(-3px);filter:brightness(1.15)}
+.co .k{font:700 12px "Courier Prime",monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.co h3{font:700 24px/1.2 "Courier Prime",monospace;color:var(--cream);margin:8px 0 10px}
+.co p{margin:0;font-size:14px;color:var(--cream2);flex:1}
+.co i{font:700 13px "Courier Prime",monospace;font-style:normal;color:var(--cream);margin-top:16px}
+.co.lead{grid-column:1/-1}.co.lead h3{font-size:30px}
+/* also: navy blocks with big pictures */
+.also{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-left:250px}
+.al{display:flex;gap:26px;align-items:flex-start;padding:26px;text-decoration:none;box-shadow:0 3px 0 rgba(0,0,0,.18);transition:transform .2s,filter .2s}
+.al:hover{transform:translateY(-3px);filter:brightness(1.15)}
+.al img{width:150px;height:225px;object-fit:cover;object-position:top;flex:none;box-shadow:0 6px 18px rgba(0,0,0,.4)}
+.al h4{font:700 24px/1.2 "Courier Prime",monospace;color:var(--cream);margin:4px 0 10px}
+.al p{margin:0 0 14px;font-size:14px;color:var(--cream2)}
+.al span{font:700 13px "Courier Prime",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+/* contact on tan */
+.contact{padding:110px 0 100px;text-align:center}
+.contact h2{font:700 clamp(30px,3.6vw,44px)/1.1 "Courier Prime",monospace;color:var(--ink);margin:14px 0 18px}
+.contact p{max-width:540px;margin:0 auto 30px;color:var(--ink)}
+.contact .small{margin:20px auto 0;font:400 14px "Courier Prime",monospace}
+footer{padding:24px 0 30px;font:400 13px "Courier Prime",monospace;letter-spacing:.06em}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{text-decoration:none}footer a:hover{color:var(--cream)}
+@media(max-width:900px){
+ .wrap{padding:0 20px}header .nav{display:none}
+ .hero{grid-template-columns:1fr;gap:36px;padding:48px 0 52px}.portrait{max-width:280px;order:-1}.seal{left:-10px;width:96px;height:96px}
+ .facts{grid-template-columns:1fr 1fr}
+ section{padding-top:70px}.sh,.body{grid-template-columns:1fr;gap:12px}.sh{margin-bottom:24px}.body>div:first-child{display:none}
+ .cos,.also{grid-template-columns:1fr;margin-left:0}
+ .al{flex-direction:column}.al img{width:100%;height:auto;aspect-ratio:3/4;max-width:240px}
+}
+</style></head>
+<body>
+<header class="navy"><div class="wrap"><b>ZAFAR AMIN</b><nav class="nav"><a href="#about">About</a><a href="#companies">Companies</a><a href="#contact">Contact</a></nav></div></header>
+
+<main>
+<div class="wrap">
+<div class="hero">
+  <div>
+    <span class="label">Founder, IDDAS Technologies</span>
+    <h1>Zafar Amin</h1>
+    <p>I build technology that keeps businesses, schools and the people they serve connected, long after the first visit.</p>
+    <div class="cta"><a class="btn" href="mailto:zafar@zafaramin.net">Email me</a><a class="lnk" href="#companies">View companies</a></div>
+  </div>
+  <div class="portrait"><img src="../img/zafar-bw.png" alt="Zafar Amin">
+  <svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="ring" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
+   <circle cx="100" cy="100" r="94" fill="none" stroke="#13233b" stroke-width="3"/><circle cx="100" cy="100" r="86" fill="none" stroke="#13233b" stroke-width="1.2"/>
+   <circle cx="100" cy="100" r="52" fill="none" stroke="#13233b" stroke-width="1.2"/>
+   <text font-family="Courier Prime,monospace" font-weight="700" font-size="15" letter-spacing="4.2" fill="#13233b"><textPath href="#ring">ZAFAR AMIN &#183; FOUNDER &#183; TAMPA, FLORIDA &#183;</textPath></text>
+   <text x="100" y="116" text-anchor="middle" font-family="Courier Prime,monospace" font-weight="700" font-size="46" fill="#13233b">ZA</text></svg></div>
+</div>
+
+<div class="facts">
+  <div class="navy"><span>Company</span><strong>IDDAS Technologies</strong></div>
+  <div class="navy"><span>Products</span><strong>CandleMe, IDDAS Protocol, Student Launch Path</strong></div>
+  <div class="navy"><span>Markets</span><strong>Six industries, from car wash to education</strong></div>
+  <div class="navy"><span>Based in</span><strong>Tampa, Florida</strong></div>
+</div>
+
+<section id="about">
+  <div class="sh"><span class="label">01 &nbsp;About</span><h2>Businesses work hard to win a customer, then lose touch the moment they walk out the door.</h2></div>
+  <div class="body"><div></div>
+    <div><p>I founded IDDAS Technologies to close that gap. Our answer is CandleMe, a digital candle that lives on a customer's phone and in Apple or Google Wallet, so the business stays one tap away.</p><p>Underneath it sits the IDDAS Protocol, which records real-world activation and attribution in a way anyone can verify.</p></div>
+    <div><p>The same platform reaches students and teachers through Student Launch Path, bringing free career resources to campuses and classrooms.</p><p>Today it serves car washes, auto dealerships, salons and beauty, education, hospitality and industrial laundry.</p></div>
+  </div>
+</section>
+
+<section id="companies">
+  <div class="sh"><span class="label">02 &nbsp;Companies</span><h2>What I have built.</h2></div>
+  <div class="cos">
+    <a class="co lead navy" href="https://iddas.tech" target="_blank" rel="noopener"><span class="k">Parent company</span><h3>IDDAS Technologies</h3><p>The company behind CandleMe, the IDDAS Protocol and Student Launch Path.</p><i>iddas.tech &#8599;</i></a>
+    <a class="co navy" href="https://candlemenow.com/showcase" target="_blank" rel="noopener"><span class="k">Product</span><h3>CandleMe</h3><p>A digital candle each customer keeps on their home screen and in Apple or Google Wallet, so coming back is one tap away.</p><i>candlemenow.com &#8599;</i></a>
+    <a class="co navy" href="https://iddasprotocol.tech" target="_blank" rel="noopener"><span class="k">Technology</span><h3>IDDAS Protocol</h3><p>Identity-free activation, lineage-based attribution and verifiable outcomes, with its rules anchored on a public blockchain.</p><i>iddasprotocol.tech &#8599;</i></a>
+    <a class="co lead navy" href="https://studentlaunchpath.com" target="_blank" rel="noopener"><span class="k">Education</span><h3>Student Launch Path</h3><p>Free career resources for students, shared through colleges, campus partners and teachers.</p><i>studentlaunchpath.com &#8599;</i></a>
+  </div>
+</section>
+
+<section>
+  <div class="sh"><span class="label">03 &nbsp;Also</span><h2>Author and musician.</h2></div>
+  <div class="also">
+    <a class="al navy" href="https://gogoguardians.com" target="_blank" rel="noopener"><img src="../img/gogo-cover.jpg" alt="Gogo Guardians book cover"><div><h4>Author</h4><p>Gogo Guardians, my first book: an illustrated adventure and riddle game for young readers, with 21 chapters and 99 full-color pictures.</p><span>gogoguardians.com &#8599;</span></div></a>
+    <a class="al navy" href="../music/"><img src="../music/img/lahore-2006.jpg" alt="Zafar Amin on stage in Lahore"><div><h4>Musician</h4><p>Songwriter and singer for Son of the Soil and The SandGuineas, from Los Angeles to Lahore. 34 original songs across two albums.</p><span>Listen &rarr;</span></div></a>
+  </div>
+</section>
+
+<div class="contact" id="contact">
+  <span class="label">04 &nbsp;Contact</span>
+  <h2>Let's talk.</h2>
+  <p>For partnerships, investment or press, email is the fastest way to reach me.</p>
+  <a class="btn" href="mailto:zafar@zafaramin.net">zafar@zafaramin.net</a>
+  <p class="small"><a href="https://www.linkedin.com/in/zafar-amin/" target="_blank" rel="noopener">LinkedIn &#8599;</a></p>
+</div>
+</div>
+</main>
+<footer class="navy"><div class="wrap"><span>&copy; 2026 Zafar Amin</span><span><a href="mailto:zafar@zafaramin.net">zafar@zafaramin.net</a> &nbsp;·&nbsp; <a href="https://iddas.tech" target="_blank" rel="noopener">IDDAS Technologies</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/zafar-amin/" target="_blank" rel="noopener">LinkedIn</a></span></div></footer>
+</body></html>
