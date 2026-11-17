@@ -49,6 +49,10 @@ figcaption{padding:8px 10px;font:13px system-ui,sans-serif;color:var(--muted)}
 .grid.two{grid-template-columns:1fr 1fr}.grid.two img{aspect-ratio:4/3}
 .grid.flyers{grid-template-columns:repeat(3,1fr)}.grid.flyers img{aspect-ratio:3/4;object-fit:contain;background:#fff}
 @media(max-width:720px){.feat{grid-template-columns:1fr}.feat .big{grid-row:auto}.grid{grid-template-columns:1fr 1fr}.grid.flyers{grid-template-columns:1fr 1fr}}
+#lb{position:fixed;inset:0;z-index:50;background:rgba(3,5,15,.94);display:none;align-items:safe center;justify-content:center;padding:16px;cursor:zoom-out;overflow:auto}
+#lb.on{display:flex}#lb img{max-width:100%;max-height:none;width:auto;border-radius:6px;box-shadow:0 10px 40px rgba(0,0,0,.6);cursor:zoom-out}
+#lb .x{position:fixed;top:12px;right:16px;font:700 30px system-ui;color:#fff;background:none;border:0;cursor:pointer}
+figure img,.hero img{cursor:zoom-in}
 blockquote{margin:18px 0;padding:14px 18px;border-left:3px solid var(--gold);background:var(--card);border-radius:0 10px 10px 0;font-style:italic}
 .book{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-top:10px}
 .book img{width:150px;border-radius:8px}
@@ -125,7 +129,7 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:24px 0 40px;font
   <figure><img loading="lazy" src="img/sots-sticker.jpg" alt=""><figcaption>Son of the Soil sticker</figcaption></figure>
   <figure><img loading="lazy" src="img/sots-bio.jpg" alt=""><figcaption>Son of the Soil bio</figcaption></figure>
   <figure><img loading="lazy" src="img/press-release.jpg" alt=""><figcaption>Press release</figcaption></figure>
-  <figure><img loading="lazy" src="img/sandguineas-bio.jpg" alt=""><figcaption>The SandGuineas bio</figcaption></figure>
+  <figure><img loading="lazy" src="img/sandguineas-bio.jpg" alt=""><figcaption>The SandGuineas bio (tap to read)</figcaption></figure>
 </div>
 
 <h2 id="book">The book</h2>
@@ -163,5 +167,11 @@ var V=[["neUrHOHJ2QQ","Blinded · Son of the Soil"],["C4QIp6dWMTw","Silence · T
 var VD=document.getElementById('vids');
 V.forEach(function(v){var d=document.createElement('div');d.className='vid';d.innerHTML='<div class="f" style="background-image:url(https://i.ytimg.com/vi/'+v[0]+'/hqdefault.jpg)"></div><p>'+v[1]+'</p>';
 d.firstChild.onclick=function(){this.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+v[0]+'?autoplay=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>';this.onclick=null;this.style.cursor='default'};VD.appendChild(d)});
+</script>
+<div id="lb"><button class="x" aria-label="Close">&times;</button><img alt=""></div>
+<script>
+(function(){var lb=document.getElementById('lb'),im=lb.querySelector('img');
+document.querySelectorAll('figure img,.hero img').forEach(function(i){i.addEventListener('click',function(){im.src=i.src;im.style.maxHeight=(i.naturalHeight>i.naturalWidth*1.4)?'none':'92vh';lb.classList.add('on');document.body.style.overflow='hidden'})});
+function close(){lb.classList.remove('on');document.body.style.overflow=''}lb.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape')close()})})();
 </script>
 </body></html>
