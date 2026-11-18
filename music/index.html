@@ -53,7 +53,7 @@ figcaption{padding:8px 10px;font:13px system-ui,sans-serif;color:var(--muted)}
 .feat .big{grid-row:span 2}.feat .big img{height:100%;object-fit:cover}.feat img{aspect-ratio:4/3;object-fit:cover}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.grid img{aspect-ratio:4/3;object-fit:cover}
 .grid.three img{aspect-ratio:1/1}
-.grid.two{grid-template-columns:1fr 1fr}.grid.two img{aspect-ratio:4/3}
+.grid.two{grid-template-columns:1fr 1fr;align-items:start}.grid.two img{aspect-ratio:4/3}
 .grid.flyers{grid-template-columns:repeat(3,1fr)}.grid.flyers img{aspect-ratio:3/4;object-fit:contain;background:#fff}
 @media(max-width:720px){.feat{grid-template-columns:1fr}.feat .big{grid-row:auto}.grid{grid-template-columns:1fr 1fr}.grid.flyers{grid-template-columns:1fr 1fr}}
 #lb{position:fixed;inset:0;z-index:50;background:rgba(3,5,15,.94);display:none;align-items:safe center;justify-content:center;padding:16px;cursor:zoom-out;overflow:auto}
@@ -109,9 +109,9 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:24px 0 40px;font
 <h3>The bands</h3>
 <div class="grid two">
   <figure><img loading="lazy" src="img/sots-cover.jpg" style="object-fit:contain;background:#fff" alt=""><figcaption>Son of the Soil</figcaption></figure>
-  <figure><img loading="lazy" src="img/sandguineas-beach.jpg" style="object-position:center 70%" alt=""><figcaption>The SandGuineas</figcaption></figure>
+  <figure><img loading="lazy" src="img/sandguineas-beach.jpg" style="object-position:center 45%" alt=""><figcaption>The SandGuineas</figcaption></figure>
   <figure><img loading="lazy" src="img/sots-artwork.jpg" alt=""><figcaption>Son of the Soil</figcaption></figure>
-  <figure><img loading="lazy" src="img/sandguineas-kneeling.jpg" alt=""><figcaption>The SandGuineas: Afzaal, Joe V., Met and Zafar</figcaption></figure>
+  <figure><img loading="lazy" src="img/sandguineas-kneeling.jpg" style="aspect-ratio:auto" alt=""><figcaption>The SandGuineas: Afzaal, Joe V., Met and Zafar</figcaption></figure>
 </div>
 <div class="grid three" style="margin-top:12px">
   <figure><img loading="lazy" src="img/revelations.jpg" alt=""><figcaption>Revelations</figcaption></figure>
