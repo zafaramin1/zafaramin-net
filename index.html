@@ -32,7 +32,7 @@ header b{font:700 16px "Courier Prime",monospace;letter-spacing:.24em;color:var(
 .portrait img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) sepia(.18) contrast(1.05);
  -webkit-mask-image:radial-gradient(ellipse 52% 58% at 50% 40%,#000 62%,rgba(0,0,0,.6) 80%,transparent 100%);mask-image:radial-gradient(ellipse 52% 58% at 50% 40%,#000 62%,rgba(0,0,0,.6) 80%,transparent 100%)}
 .namerow{display:flex;align-items:center;gap:26px;margin:16px 0 24px}.namerow h1{margin:0}
-.seal{width:104px;height:104px;flex:none;transform:rotate(-12deg);opacity:.92}
+.crest{display:inline-flex;flex-direction:column;align-items:center;gap:10px}.seal{width:96px;height:96px;flex:none;opacity:.92}
 /* facts */
 .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
 .facts>div{display:flex;flex-direction:column}.facts .box{flex:1;min-height:96px;padding:20px 22px;box-shadow:0 3px 0 rgba(0,0,0,.15)}
@@ -81,7 +81,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--cream)}
  .hero{grid-template-columns:1fr;gap:36px;padding:48px 0 52px}.portrait{max-width:280px;order:-1}
  .facts{grid-template-columns:1fr 1fr}
  section{padding-top:70px}.sh,.body{grid-template-columns:1fr;gap:12px}.sh{margin-bottom:24px}.body>div:first-child{display:none}
- .cos,.also{grid-template-columns:1fr;margin-left:0;gap:30px}.sign{margin-left:0}.sign img{width:180px}.facts{gap:20px}.namerow{gap:14px}.seal{width:72px;height:72px}
+ .cos,.also{grid-template-columns:1fr;margin-left:0;gap:30px}.sign{margin-left:0}.sign img{width:180px}.facts{gap:20px}.namerow{gap:14px}.seal{width:76px;height:76px}
  .al{flex-direction:column}.al img{width:100%;height:auto;aspect-ratio:3/4;max-width:240px}
 }
 html,body{forced-color-adjust:none}
@@ -97,13 +97,12 @@ html,body{forced-color-adjust:none}
 <div class="wrap">
 <div class="hero">
   <div>
-    <span class="label">Founder, IDDAS Technologies</span>
-    <div class="namerow"><h1>Zafar Amin</h1>
-  <svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="ring" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
+    <div class="crest"><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="ring" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
    <circle cx="100" cy="100" r="94" fill="none" stroke="#9e2a2b" stroke-width="3"/><circle cx="100" cy="100" r="86" fill="none" stroke="#9e2a2b" stroke-width="1.2"/>
    <circle cx="100" cy="100" r="52" fill="none" stroke="#9e2a2b" stroke-width="1.2"/>
-   <text font-family="Courier Prime,monospace" font-weight="700" font-size="13.5" letter-spacing="2.2" fill="#9e2a2b"><textPath href="#ring">ZAFAR AMIN &#183; THE FOUNDER &#183; ZAFAR AMIN &#183; THE FOUNDER &#183;</textPath></text>
-   <text x="100" y="116" text-anchor="middle" font-family="Courier Prime,monospace" font-weight="700" font-size="46" fill="#9e2a2b">ZA</text></svg></div>
+   <text font-family="Courier Prime,monospace" font-weight="700" font-size="13.5" letter-spacing="1.5" fill="#9e2a2b"><textPath href="#ring">ZAFAR AMIN &#183; FOUNDER &#183; ZAFAR AMIN &#183; FOUNDER &#183;</textPath></text>
+   <text x="100" y="116" text-anchor="middle" font-family="Courier Prime,monospace" font-weight="700" font-size="46" fill="#9e2a2b">ZA</text></svg><span class="label">Founder, IDDAS Technologies</span></div>
+    <div class="namerow"><h1>Zafar Amin</h1></div>
     <p>I build technology that keeps businesses, schools and the people they serve connected, long after the first visit.</p>
     <div class="cta"><a class="btn" href="mailto:zafar@zafaramin.net">Email me</a><a class="lnk" href="#companies">View companies</a></div>
   </div>
