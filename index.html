@@ -141,6 +141,12 @@ html,body{forced-color-adjust:none}
     <div class="flip"><span class="k">Education</span><div class="card" tabindex="0"><div class="inner">
       <div class="face navy"><h3>Student Launch Path</h3><small>Touch to flip</small></div>
       <div class="face back navy"><p>Free career resources for students, shared through colleges, campus partners and teachers.</p><a href="https://studentlaunchpath.com" target="_blank" rel="noopener">studentlaunchpath.com &#8599;</a></div></div></div></div>
+    <div class="flip"><span class="k">Teach with us</span><div class="card" tabindex="0"><div class="inner">
+      <div class="face navy"><h3>Teacher Recruitment</h3><small>Touch to flip</small></div>
+      <div class="face back navy"><p>I am part of TutorABC's USA team that manages teacher recruitment. Apply through our job posting to start the hiring process.</p><a href="https://www.linkedin.com/jobs/view/4436863205/" target="_blank" rel="noopener">Apply on LinkedIn &#8599;</a></div></div></div></div>
+    <div class="flip"><span class="k">Sales</span><div class="card" tabindex="0"><div class="inner">
+      <div class="face navy"><h3>Join Our Sales Team</h3><small>Touch to flip</small></div>
+      <div class="face back navy"><p>Sell CandleMe to local businesses and earn commission on every sale. Join in a few minutes.</p><a href="https://candlemenow.com/join-sales-team" target="_blank" rel="noopener">Join the sales team &#8599;</a></div></div></div></div>
   </div>
 </section>
 
@@ -163,5 +169,5 @@ html,body{forced-color-adjust:none}
 </div>
 </main>
 <footer class="navy"><div class="wrap"><span>&copy; 2026 Zafar Amin</span><span><a href="mailto:zafar@zafaramin.net">zafar@zafaramin.net</a> &nbsp;·&nbsp; <a href="https://iddas.tech" target="_blank" rel="noopener">IDDAS Technologies</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/zafar-amin/" target="_blank" rel="noopener">LinkedIn</a></span></div></footer>
-<script>document.querySelectorAll('.card').forEach(function(c){c.addEventListener('click',function(e){if(e.target.closest('a'))return;var was=c.classList.contains('on');document.querySelectorAll('.card.on').forEach(function(o){o.classList.remove('on')});if(!was)c.classList.add('on')});c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();c.click()}})});</script>
+<script>document.querySelectorAll('.card').forEach(function(c){c.addEventListener('click',function(e){if(e.target.closest('a'))return;c.classList.toggle('on')});c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();c.click()}})});</script>
 </body></html>
